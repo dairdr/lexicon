@@ -1,3 +1,9 @@
+*.py[co]
+*.egg*
+*.swp
+*~
+build
+*.db
 *.log
 *.pot
 *.pyc
