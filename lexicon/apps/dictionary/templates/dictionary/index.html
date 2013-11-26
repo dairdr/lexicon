@@ -1,0 +1,20 @@
+{% extends 'dictionary/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'dictionary_app_name' %}{% endblock %}
+
+{% block content %}
+<section id="promo">
+	<div class="inner-container">
+		<article class="text-promo">
+			<div class="image-container">
+				<img src="{{ STATIC_URL }}dictionary/img/promo.jpg" alt="diccionario promo">
+			</div>
+			<div class="promo-container">
+				<h1>{% trans 'dictionary_index_welcome' %}</h1>
+				<p>{% trans 'dictionary_index_promo' %}</p>
+			</div>
+		</article>
+	</div>
+</section>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'dictionary/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'dictionary_list_results_for' %} '{{ needle|escape }}'| {% trans 'dictionary_app_name' %}{% endblock %}
+
+{% block content %}
+<section id="results">
+	<div class="inner-container">
+		<i class=" icon-th-list"></i> <h1>{% trans 'dictionary_list_results_for' %} '{{ needle|escape }}'</h1>
+		{% if words|length > 0 %}
+		{% for word in object_list  %}
+		<article>
+			<header><i class="icon-ok"></i> <a href="{% url 'dictionary:dictionary-word' word.id %}">{{ word.name|escape }}</a> <strong>({% if word.mark %}{{ word.mark|upper|escape }}{% else %}{% trans 'dictionary_list_no_marks' %}{% endif %})</strong></header>
+		</article>
+		{% endfor %}
+		{% else %}
+		<article>
+			<header><i class="icon-remove"></i> {% trans 'dictionary_list_no_words_found' %}</header>
+		</article>
+		{% endif %}
+	</div>
+</section>
+{% endblock %}

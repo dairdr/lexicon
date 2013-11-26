@@ -2,3 +2,7 @@
 *.pot
 *.pyc
 local_settings.py
+lexicon/settings/common.py
+lexicon/settings/prod.py
+lexicon/settings/dev.py
+cache/*

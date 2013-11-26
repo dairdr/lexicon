@@ -1,0 +1,33 @@
+{% extends 'dictionary/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'dictionary_contact_title' %} | {% trans 'dictionary_app_name' %}{% endblock %}
+
+{% block content %}
+<section id="contact">
+	<div class="inner-container">
+		<article>
+			<header><i class="icon-envelope"></i> <h1>{% trans 'dictionary_contact_contact' %}</h1></header>
+			<form action="." method="post" accept-charset="utf-8">
+				<div>
+					{{ form.name.errors }}
+					<label for="id_name">{% trans 'dictionary_contact_name_form' %}</label>
+					{{ form.name }}
+				</div>
+				<div>
+					{{ form.sender.errors }}
+					<label for="id_sender">{% trans 'dictionary_contact_sender_form' %}</label>
+					{{ form.sender }}
+				</div>
+				<div>
+					{{ form.message.errors }}
+					<label for="id_message">{% trans 'dictionary_contact_message_form' %}</label>
+					{{ form.message }}
+				</div>
+				{% csrf_token %}
+				<input class="btn" type="submit" value="{% trans 'dictionary_contact_send_form' %}">
+			</form>
+		</article>
+	</div>
+</section>
+{% endblock %}

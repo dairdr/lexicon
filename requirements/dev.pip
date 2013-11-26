@@ -1,0 +1,2 @@
+-r common.pip
+django-debug-toolbar==0.9.4

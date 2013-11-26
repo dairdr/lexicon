@@ -1,0 +1,171 @@
+# English United States messages for dictionary app
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Dair Diaz Rambao <eldaro10@gmail.com>, 2013.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-27 16:09-0500\n"
+"PO-Revision-Date: 2013-10-27 04:10+0500\n"
+"Last-Translator: Dair Diaz Rambao <eldaro10@gmail.com>\n"
+"Language-Team: English <LL@li.org>\n"
+"Language: English United States\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: templates/dictionary/403.html:4
+msgid "dictionary_403_title"
+msgstr "Error 403"
+
+#: templates/dictionary/403.html:4 templates/dictionary/404.html:4
+#: templates/dictionary/500.html:4 templates/dictionary/contact.html:4
+#: templates/dictionary/index.html:4 templates/dictionary/list.html:4
+#: templates/dictionary/project.html:4 templates/dictionary/result.html:4
+#: templates/dictionary/thanks.html:4
+msgid "dictionary_app_name"
+msgstr "Words"
+
+#: templates/dictionary/404.html:4
+msgid "dictionary_404_title"
+msgstr "Error 404"
+
+#: templates/dictionary/500.html:4
+msgid "dictionary_500_title"
+msgstr "Error 500"
+
+#: templates/dictionary/base.html:41
+msgid "dictionary_base_word"
+msgstr "Words"
+
+#: templates/dictionary/base.html:44
+msgid "dictionary_base_project"
+msgstr "Project"
+
+#: templates/dictionary/base.html:46
+msgid "dictionary_base_contact"
+msgstr "Contact us"
+
+#: templates/dictionary/base.html:49
+msgid "dictionary_base_search_form"
+msgstr "Search"
+
+#: templates/dictionary/base.html:55
+msgid "dictionary_base_select_language"
+msgstr "Language"
+
+#: templates/dictionary/base.html:93
+msgid "dictionary_developed_by"
+msgstr "Developed by "
+
+#: templates/dictionary/contact.html:4
+msgid "dictionary_contact_title"
+msgstr "Contact us"
+
+#: templates/dictionary/contact.html:10
+msgid "dictionary_contact_contact"
+msgstr "Contact us"
+
+#: templates/dictionary/contact.html:14
+msgid "dictionary_contact_name_form"
+msgstr "Names"
+
+#: templates/dictionary/contact.html:19
+msgid "dictionary_contact_sender_form"
+msgstr "Email"
+
+#: templates/dictionary/contact.html:24
+msgid "dictionary_contact_message_form"
+msgstr "Message"
+
+#: templates/dictionary/contact.html:28
+msgid "dictionary_contact_send_form"
+msgstr "Send"
+
+#: templates/dictionary/index.html:14
+msgid "dictionary_index_welcome"
+msgstr "welcome to etnologüistic dictionary for valley of sinú and san jorge river."
+
+#: templates/dictionary/index.html:15
+msgid "dictionary_index_promo"
+msgstr "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+
+#: templates/dictionary/list.html:4 templates/dictionary/list.html.py:9
+msgid "dictionary_list_results_for"
+msgstr "Results for "
+
+#: templates/dictionary/list.html:13
+msgid "dictionary_list_no_marks"
+msgstr "no marks found"
+
+#: templates/dictionary/list.html:18
+msgid "dictionary_list_no_words_found"
+msgstr "no words found"
+
+#: templates/dictionary/project.html:4
+msgid "dictionary_project_title"
+msgstr "Project"
+
+#: templates/dictionary/project.html:10
+msgid "dictionary_project_project"
+msgstr "Project"
+
+#: templates/dictionary/project.html:24
+msgid "dictionary_project_download_pdf"
+msgstr "Download Project PDF"
+
+#: templates/dictionary/result.html:4 templates/dictionary/result.html:33
+#: templates/dictionary/result.html:125
+msgid "dictionary_result_no_word_found"
+msgstr "no word found"
+
+#: templates/dictionary/result.html:15
+msgid "dictionary_result_prototype"
+msgstr "Prototype"
+
+#: templates/dictionary/result.html:20
+msgid "dictionary_result_name"
+msgstr "Name"
+
+#: templates/dictionary/result.html:21
+msgid "dictionary_result_image"
+msgstr "Image"
+
+#: templates/dictionary/result.html:43
+msgid "dictionary_result_semantic_category"
+msgstr "semantic category"
+
+#: templates/dictionary/result.html:71 templates/dictionary/result.html:79
+msgid "dictionary_result_no_data"
+msgstr "no data found"
+
+#: templates/dictionary/result.html:88
+msgid "dictionary_result_no_info"
+msgstr "no info found"
+
+#: templates/dictionary/result.html:94
+msgid "dictionary_result_maps_by_isoglosas"
+msgstr "maps by isoglosas"
+
+#: templates/dictionary/result.html:100
+msgid "dictionary_result_metaphor"
+msgstr "conceptual metaphor"
+
+#: templates/dictionary/result.html:108
+msgid "dictionary_result_metonymy"
+msgstr "conceptual metonymy"
+
+#: templates/dictionary/result.html:116
+msgid "dictionary_result_semantic_field"
+msgstr "semantic field"
+
+#: templates/dictionary/thanks.html:4
+msgid "dictionary_thanks_title"
+msgstr "Thanks :D"
+
+#: templates/dictionary/thanks.html:9
+msgid "dictionary_thanks_thanks_message"
+msgstr "Thanks for feedback"

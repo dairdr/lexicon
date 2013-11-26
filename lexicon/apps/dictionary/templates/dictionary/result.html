@@ -1,0 +1,129 @@
+{% extends 'dictionary/base.html' %}
+{% load i18n %}
+
+{% block title %}{% if word %}{{ word.name|escape }}{% else %}{% trans 'dictionary_result_no_word_found' %}{% endif %} | {% trans 'dictionary_app_name' %}{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKkqToQ7gwCWQT61FsZE6e8X66QlJNaJM&amp;sensor=false"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}dictionary/js/script.js"></script>
+{% endblock %}
+
+{% block content %}
+{% if word %}
+<section id="grid">
+	<div class="inner-container">
+		<header><i class="icon-th-list"></i> <h1>{% trans 'dictionary_result_prototype' %}</h1></header>
+		<div class="grid-container">
+			<table class="table table-hover table-bordered">
+				<thead>
+					<tr>
+						<th>{% trans 'dictionary_result_name' %}</th>
+						<th>{% trans 'dictionary_result_image' %}</th>
+					</tr>
+				</thead>
+				{% if words and words|length > 0 %}
+				{% for item in words %}
+				<tr {% ifequal item.id word.id %}class="red"{% endifequal %}>
+					<td style="vertical-align:middle;"><a href="{% url 'dictionary:dictionary-word' item.id %}">{{ item.name|escape }}</a></td>
+					<td><img style="width:70px;" src="{{ item.image.url }}" /></td>
+				</tr>
+				{% endfor %}
+				{% else %}
+				<tr>
+					<td>{% trans 'dictionary_result_no_word_found' %}</td>
+					<td></td>
+				</tr>
+				{% endif %}
+			</table>
+		</div>
+	</div>
+</section>
+<section id="main-content">
+	<div class="inner-container">
+		<header><i class="icon-align-justify"></i> <h1>{% trans 'dictionary_result_semantic_category' %}</h1></header>
+		{% if f and f|length > 0 %}
+		<div id="ac1" class="accordion">
+			{% for item in f %}
+			<div class="accordion-group" style="background:#fff;">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#ac1" href="#collapse{{ item.id }}">{{ item.name|upper|escape }}</a>
+				</div>
+				<div id="collapse{{ item.id }}" class="accordion-body collapse in">
+					<div class="accordion-inner">
+						{% if item.slc|length > 0 %}
+						<div id="ac2" class="accordion">
+						{% for sub_item in item.slc %}
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#ac2" href="#collapse2{{ sub_item.id }}">{{ sub_item.name|upper|escape }}</a>
+								</div>
+								<div id="collapse2{{ sub_item.id }}" class="accordion-body collapse in">
+									<div class="accordion-inner">
+										{% if sub_item.skill|length > 0 %}
+										<div id="ac3" class="accordion">
+										{% for sub_sub_item in sub_item.skill %}
+											<div class="alert alert-info">
+												<p>{{ sub_sub_item.name|title|escape }} <strong>({{ sub_sub_item.value|escape }})</strong></p>
+											</div>
+										{% endfor %}
+										</div>
+										{% else %}
+										<p>{% trans 'dictionary_result_no_data' %}</p>
+										{% endif %}
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+						</div>
+						{% else %}
+						<p>{% trans 'dictionary_result_no_data' %}</p>
+						{% endif %}
+					</div>
+
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		{% else %}
+		<strong><i class="icon-remove"></i> {% trans 'dictionary_result_no_info' %}</strong>
+		{% endif %}
+	</div>
+</section>
+<section id="map">
+	<div class="inner-container">
+		<header><i class="icon-map-marker"></i> <h1>{% trans 'dictionary_result_maps_by_isoglosas' %}</h1></header>
+		<div id="map-container" map-type="{{ word.map|escape }}" class="map-content"></div>
+	</div>
+</section>
+<section id="section-one">
+	<div class="inner-container">
+		<header><i class="icon-picture"></i> <h1>{% trans 'dictionary_result_metaphor' %}</h1></header>
+		<div class="contents-200 image-content">
+			<img src="{{ word.metaphor.url }}" alt="metáfora" />
+		</div>
+	</div>
+</section>
+<section id="section-two">
+	<div class="inner-container">
+		<header><i class="icon-picture"></i> <h1>{% trans 'dictionary_result_metonymy' %}</h1></header>
+		<div class="contents-200 image-content">
+			<img src="{{ word.metonymy.url }}" alt="metonimia" />
+		</div>
+	</div>
+</section>
+<section id="draw">
+	<div class="inner-container">
+		<header><i class="icon-picture"></i> <h1>{% trans 'dictionary_result_semantic_field' %}</h1></header>
+		<div class="contents image-content">
+			<img src="{{ word.semantic_field.url }}" alt="campo semántico" />
+		</div>
+	</div>
+</section>
+{% else %}
+<section id="error">
+	<div class="inner-container">
+		<header><i class="icon-remove"></i> <h1>{% trans 'dictionary_result_no_word_found' %}</h1></header>
+	</div>
+</section>
+{% endif %}
+{% endblock %}

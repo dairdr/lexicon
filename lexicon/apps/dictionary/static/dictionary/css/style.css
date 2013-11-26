@@ -1,0 +1,229 @@
+/* general styles */
+html {
+	font-size: 100%;
+	line-height: 1.5;
+	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+	text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+		-webkit-text-size-adjust: 100%;
+		-moz-text-size-adjust: 100%;
+		-ms-text-size-adjust: 100%;
+		-o-text-size-adjust: 100%;
+}
+
+body {
+	font-family: Helvetica,Arial,georgia,times,serif;
+	font-size: 17px;
+	line-height: 1.2;
+	background: #d9edf7;
+}
+
+.alert, .errorlist li {
+	padding: 0.5em;
+	margin-bottom: 1em;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	background-color: #fcf8e3;
+	border: 1px solid #fbeed5;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	-ms-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.alert-error, .errorlist li {
+	color: #b94a48;
+	background-color: #f2dede;
+	border-color: #eed3d7;
+	font-size: 0.9em;
+}
+
+.alert-info {
+	color: #3a87ad;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+ul.errorlist {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+input[type="text"] {
+	width: 100%;
+}
+
+textarea {
+	width: 100%;
+}
+
+p {
+	margin: 0.5em 0
+}
+
+table {
+	background-color: #fff;
+}
+
+.red {
+	background-color: #F78181;
+}
+
+.collapsible {
+	background-color: #fff;
+}
+
+body::-webkit-scrollbar, div::-webkit-scrollbar {
+	width: 13px;
+	height: 13px;
+	background-color: #eeeeee;
+}
+
+body::-webkit-scrollbar-thumb, div::-webkit-scrollbar-thumb {
+	width: 13px;
+	height: 13px;
+	background-color: #cccccc;
+}
+
+h1 {
+	font-size: 1.2em;
+	text-transform: uppercase;
+	display: inline;
+}
+
+a {
+	color: #0088cc;
+	text-decoration: none;
+	outline: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a.entry-link {
+	font-size: 1em;
+	text-transform: uppercase;
+}
+
+img {
+	border: 0;
+}
+
+header, section, nav, footer {
+	width: 100%;
+}
+
+header > .inner-container, nav > .inner-container, section > .inner-container, footer > .inner-container {
+	width: 990px;
+	margin: 0 auto;
+}
+
+section {
+	margin-top: 1.5em;
+}
+/* end general styles */
+
+/* pagination */
+.pagination {
+	text-align: center;
+}
+/* end pagination */
+
+/* grid section */
+div.grid-container {
+	max-height: 320px;
+	overflow: auto;
+}
+/* end grid section */
+
+/* content */
+.contents {
+	height:400px;
+	background-color:#fff;
+	overflow: hidden;
+}
+
+.image-content img {
+	width: 100%;
+}
+
+.contents-200 {
+	height:200px;
+	background-color:#fff;
+	overflow: hidden;
+}
+
+.map-content {
+	width: 100%;
+	height: 400px;
+	background-color: #fff
+}
+/* end content */
+
+/* promo */
+#promo > .inner-container {
+	position: relative;
+}
+
+#promo > .inner-container > article > .image-container {
+	overflow: hidden;
+	height: 400px;
+	-webkit-border-radius: 0.2em;
+	-moz-border-radius: 0.2em;
+	-o-border-radius: 0.2em;
+	-ms-border-radius: 0.2em;
+	border-radius: 0.2em;
+}
+
+#promo > .inner-container > article > .promo-container {
+	width: 600px;
+	position:absolute;
+	top: 0;
+	right: 0;
+	color: #fff;
+	line-height: 1.5em;
+	padding: 1em 1.2em 0 0;
+	text-align: right;
+	font-size: 1.6em;
+}
+
+#promo .promo-container h1,
+#promo .promo-container p {
+	color: #fff;
+	-webkit-text-shadow: 0 1px 0 #000;
+	-moz-text-shadow: 0 1px 0 #000;
+	-o-text-shadow: 0 1px 0 #000;
+	-ms-text-shadow: 0 1px 0 #000;
+	text-shadow: 0 1px 0 #000;
+}
+/* end promo */
+
+/* results */
+#results, #project, #contact {
+	min-height: 400px;
+}
+
+#results article {
+	margin: 0.7em 0;
+}
+
+#results article > header > a {
+	font-size: 1.1em;
+	text-transform: uppercase;
+}
+/* end results */
+
+/* project info page */
+#project div article p{
+	text-align: justify;
+}
+/* end project info page */
+
+/* footer */
+footer > .inner-container {
+	padding: 2em 0;
+	font-size: 0.9em;
+	text-align: center;
+}
+/* end footer */

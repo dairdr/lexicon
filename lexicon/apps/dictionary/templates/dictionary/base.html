@@ -1,0 +1,103 @@
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="{{ LANGUAGE_CODE }}" class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}dictionary/img/favicon.ico" />
+		<link rel="apple-touch-icon" href="{{ STATIC_URL }}dictionary/img/apple-touch-icon.png" />
+		<link rel="apple-touch-icon" sizes="72x72" href="{{ STATIC_URL }}dictionary/img/apple-touch-icon-72x72.png" />
+		<link rel="apple-touch-icon" sizes="114x114" href="{{ STATIC_URL }}dictionary/img/apple-touch-icon-114x114.png" />
+		<title>{% block title %}Title Page{%  endblock %}</title>
+		<meta name="author" content="Dair 'daro' Diaz - @dairdr" />
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}dictionary/css/libs/normalize/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}dictionary/lib/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}dictionary/css/style.css" />
+		{% block stylesheets %}{%  endblock %}
+		<!-- javascript -->
+
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="{{ STATIC_URL }}dictionary/js/libs/html5shiv/html5shiv.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="{{ STATIC_URL }}dictionary/lib/bootstrap/js/bootstrap.min.js"></script>
+		{% block javascripts %}{%  endblock %}
+	</head>
+	<body>
+		<!--[if lt IE 7]>
+		<div class="alert alert-error" style="text-align:center;">
+			<p class="browsehappy">Estas utilizando un navegador <strong>Desatualizado</strong>. Por favor <a rel="nofollow" href="http://browsehappy.com/">actualiza tu navegador</a> para visualizar mejor todos sitios web.</p>
+		</div>
+		<![endif]-->
+
+		<!-- header -->
+		<header id="header">
+			<div class="inner-container">
+				<nav class="navbar">
+					<div class="navbar-inner">
+						<a rel="follow" class="brand" href="{% url 'dictionary:dictionary-index' %}">{% trans 'dictionary_base_word' %}</a>
+						<ul class="nav">
+							<li class="divider-vertical"></li>
+							<li><a href="{% url 'dictionary:dictionary-project' %}" rel="follow">{% trans 'dictionary_base_project' %}</a></li>
+							<li class="divider-vertical"></li>
+							<!--<li><a href="{% url 'dictionary:dictionary-contact' %}" rel="follow">{% trans 'dictionary_base_contact' %}</a></li>
+							<li class="divider-vertical"></li>-->
+							<form action="{% url 'dictionary:dictionary-search' %}" method="get" class="navbar-search" accept-charset="utf-8">
+								<input type="text" name="w" placeholder="{% trans 'dictionary_base_search_form' %}">
+							</form>
+						</ul>
+						<ul class="nav pull-right">
+							<li class="divider-vertical"></li>
+							<li id="fat-menu" class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#">{% trans 'dictionary_base_select_language' %} <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									{% get_available_languages as languages %}
+									{% for lang_code, lang_name in languages %}
+									{% language lang_code %}
+									<li>
+										<a href="{% url 'dictionary:dictionary-index' %}">{{ lang_name }}</a>
+									</li>
+									{% endlanguage %}
+									{% endfor %}
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<!-- end header -->
+
+		<!-- index -->
+		<section class="index">
+			<div class="inner-container">
+				<div class="pagination">
+					<ul>
+						{% for letter in alphabeth %}
+						<li><a href="{% url 'dictionary:dictionary-search-by-index' letter %}" rel="follow">{{ letter }}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- end index -->
+
+		{% block content %}{% endblock %}
+
+		<!-- footer -->
+		<footer id="footer">
+			<div class="inner-container">
+				<span>{% trans 'dictionary_developed_by' %} <a rel="nofollow" href="https://twitter.com/dairdr">@dairdr</a></span>
+				<div>
+					<span>2013</span>
+				</div>
+			</div>
+		</footer>
+		<!-- end footer -->
+		{% block javascripts_bottom %}{%  endblock %}
+	</body>
+</html>

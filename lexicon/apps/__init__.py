@@ -1,0 +1,1 @@
+"""Contains all projects's apps."""
