@@ -10,6 +10,14 @@
 
 {% block content %}
 {% if word %}
+<section id="description">
+	<div class="inner-container">
+		<header><i class="icon-th-list"></i> <h1>Descripci&oacute;n</h1></header>
+		<div class="description-container">
+			<p>{{ word.description|capfirst }}</p>
+		</div>
+	</div>
+</section>
 <section id="grid">
 	<div class="inner-container">
 		<header><i class="icon-th-list"></i> <h1>{% trans 'dictionary_result_prototype' %}</h1></header>
@@ -48,7 +56,7 @@
 				<div class="accordion-heading">
 					<a class="accordion-toggle" data-toggle="collapse" data-parent="#ac1" href="#collapse{{ item.id }}">{{ item.name|upper|escape }}</a>
 				</div>
-				<div id="collapse{{ item.id }}" class="accordion-body collapse in">
+				<div id="collapse{{ item.id }}" class="accordion-body collapse">
 					<div class="accordion-inner">
 						{% if item.slc|length > 0 %}
 						<div id="ac2" class="accordion">
@@ -57,7 +65,7 @@
 								<div class="accordion-heading">
 									<a class="accordion-toggle" data-toggle="collapse" data-parent="#ac2" href="#collapse2{{ sub_item.id }}">{{ sub_item.name|upper|escape }}</a>
 								</div>
-								<div id="collapse2{{ sub_item.id }}" class="accordion-body collapse in">
+								<div id="collapse2{{ sub_item.id }}" class="accordion-body collapse">
 									<div class="accordion-inner">
 										{% if sub_item.skill|length > 0 %}
 										<div id="ac3" class="accordion">
@@ -79,7 +87,6 @@
 						<p>{% trans 'dictionary_result_no_data' %}</p>
 						{% endif %}
 					</div>
-
 				</div>
 			</div>
 			{% endfor %}
