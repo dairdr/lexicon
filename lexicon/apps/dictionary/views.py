@@ -10,7 +10,7 @@ from django.views.generic.edit import FormView
 from django.views.generic.list import ListView
 from smtplib import SMTPException
 from forms import ContactForm
-from models import Word, FLC, SLC, WordHasSkill
+from models import Word, FLC, SLC, WordHasSkill, Metaphor, Metonymy, SemanticField
 from mixing import CacheMixin
 from utils import get_alphabet
 
@@ -123,6 +123,9 @@ class WordView(TemplateView):
 		# conseguir los datos de la palabra buscada
 		try:
 			result = Word.objects.get(id=word)
+			metaphor = Metaphor.objects.filter(word__id=result.id)
+			metonymy = Metonymy.objects.filter(word__id=result.id)
+			semantic_field = SemanticField.objects.filter(word__id=result.id)
 		except ObjectDoesNotExist as e:
 			# show error 403 page, redirect or whatever
 			pass
@@ -131,7 +134,7 @@ class WordView(TemplateView):
 			pass
 
 		if 'result' in locals():
-			context.update({'word': result})
+			context.update({'word': result, 'metaphor':metaphor, 'metonymy':metonymy, 'semantic_field':semantic_field})
 			# traer las otras palabras que estan en la misma categoria
 			words = []
 			try:

@@ -1,4 +1,5 @@
 {% load i18n %}
+{% load staticfiles %}
 {% get_current_language as LANGUAGE_CODE %}
 <!DOCTYPE html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -8,23 +9,23 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<link rel="shortcut icon" type="image/x-icon" href="{{ STATIC_URL }}dictionary/img/favicon.ico" />
-		<link rel="apple-touch-icon" href="{{ STATIC_URL }}dictionary/img/apple-touch-icon.png" />
-		<link rel="apple-touch-icon" sizes="72x72" href="{{ STATIC_URL }}dictionary/img/apple-touch-icon-72x72.png" />
-		<link rel="apple-touch-icon" sizes="114x114" href="{{ STATIC_URL }}dictionary/img/apple-touch-icon-114x114.png" />
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'dictionary/img/favicon.ico' %}" />
+		<link rel="apple-touch-icon" href="{% static 'dictionary/img/apple-touch-icon.png' %}" />
+		<link rel="apple-touch-icon" sizes="72x72" href="{% static 'dictionary/img/apple-touch-icon-72x72.png' %}" />
+		<link rel="apple-touch-icon" sizes="114x114" href="{% static 'dictionary/img/apple-touch-icon-114x114.png' %}" />
 		<title>{% block title %}Title Page{%  endblock %}</title>
 		<meta name="author" content="Dair 'daro' Diaz - @dairdr" />
-		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}dictionary/css/libs/normalize/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}dictionary/lib/bootstrap/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}dictionary/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="{% static 'dictionary/css/libs/normalize/normalize.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'dictionary/lib/bootstrap/css/bootstrap.min.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'dictionary/css/style.css' %}" />
 		{% block stylesheets %}{%  endblock %}
 		<!-- javascript -->
 
 		<!--[if lt IE 9]>
-		<script type="text/javascript" src="{{ STATIC_URL }}dictionary/js/libs/html5shiv/html5shiv.js"></script>
+		<script type="text/javascript" src="{% static 'dictionary/js/libs/html5shiv/html5shiv.js' %}"></script>
 		<![endif]-->
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script type="text/javascript" src="{{ STATIC_URL }}dictionary/lib/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="{% static 'dictionary/lib/bootstrap/js/bootstrap.min.js' %}"></script>
 		{% block javascripts %}{%  endblock %}
 	</head>
 	<body>

@@ -88,23 +88,23 @@ class CategoryHasFLC(models.Model):
 
 class Word(models.Model):
 	"""Word table class."""
-	name = models.CharField(max_length=45, db_column='name', null=False, blank=False)
+	name = models.CharField(max_length=45, db_column='name')
 	description = models.CharField(max_length=140, db_column='description', blank=True)
 	image = models.ImageField(upload_to='dictionary/image', db_column='image', default='dictionary/image/default.png', null=False, blank=True)
-	mark = models.CharField(max_length=45, db_column='mark', null=False, blank=True)
+	mark = models.CharField(max_length=45, db_column='mark', blank=True)
 	map = models.CharField(max_length=45, db_column='map', blank=True)
-	metaphor = models.ImageField(upload_to='dictionary/metaphor', db_column='metaphor', default='dictionary/metaphor/default.png', null=False, blank=True)
-	metonymy = models.ImageField(upload_to='dictionary/metonymy', db_column='metonymy', default='dictionary/metonymy/default.png', null=False, blank=True)
-	semantic_field = models.ImageField(upload_to='dictionary/semantic_field', db_column='semantic_field', default='dictionary/semantic_field/default.png', null=False, blank=True)
 	category = models.ForeignKey(Category, db_column='category', on_delete=models.PROTECT)
-	order = models.PositiveIntegerField(db_column='order', null=False, blank=False)
+	order = models.PositiveIntegerField(db_column='order')
 	skill = models.ManyToManyField(Skill, through='WordHasSkill')
+	metaphor = models.ManyToManyField('Metaphor', null=True, blank=True)
+	metonymy = models.ManyToManyField('Metonymy', null=True, blank=True)
+	semantic_field = models.ManyToManyField('SemanticField', null=True, blank=True)
 
 	class Meta:
 		db_table = 'dictionary_word'
 		ordering = ['order']
 
-	def __str__(self):
+	def __unicode__(self):
 		return '%s' % self.name
 
 class WordHasSkill(models.Model):
@@ -118,3 +118,36 @@ class WordHasSkill(models.Model):
 
 	def __str__(self):
 		return 'relacion word y flc (%s y %s)' % (self.word.name, self.skill.name)
+
+class Metaphor(models.Model):
+	"""Metaphor table class."""
+	name = models.CharField(max_length=45, db_column='name')
+
+	class Meta:
+		db_table = 'dictionary_metaphor'
+		ordering = ['name']
+
+	def __str__(self):
+		return self.name
+
+class Metonymy(models.Model):
+	"""Metonymy table class."""
+	name = models.CharField(max_length=45, db_column='name')
+
+	class Meta:
+		db_table = 'dictionary_metonymy'
+		ordering = ['name']
+
+	def __str__(self):
+		return self.name
+
+class SemanticField(models.Model):
+	"""SemanticField table class."""
+	name = models.CharField(max_length=45, db_column='name')
+
+	class Meta:
+		db_table = 'dictionary_semantic_field'
+		ordering = ['name']
+
+	def __str__(self):
+		return self.name

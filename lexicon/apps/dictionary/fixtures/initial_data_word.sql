@@ -1,0 +1,2 @@
+INSERT INTO `lexicon`.`dictionary_word` (`id`, `name`, `description`, `image`, `mark`, `map`, `category`, `order`) VALUES ('1', 'Bocachico', 'Pez que vive en aguas menos profundas', 'dictionary/image/default.png', 'a.', '', '10', '1');
+INSERT INTO `lexicon`.`dictionary_word` (`id`, `name`, `description`, `image`, `mark`, `map`, `category`, `order`) VALUES ('2', 'Tilapia', 'Pez que vive en aguas menos profundas', 'dictionary/image/default.png', 'b.', '', '10', '2');

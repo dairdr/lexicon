@@ -105,25 +105,43 @@
 <section id="section-one">
 	<div class="inner-container">
 		<header><i class="icon-picture"></i> <h1>{% trans 'dictionary_result_metaphor' %}</h1></header>
-		<div class="contents-200 image-content">
-			<img src="{{ word.metaphor.url }}" alt="metáfora" />
-		</div>
+		{% if metaphor|length > 0 %}
+		<ul class="list-group">
+			{% for item in metaphor  %}
+			<li class="list-group-item">{{ item.name|escape }}</li>
+			{% endfor %}
+		</ul>
+		{% else %}
+		<h2>No hay resultados a&uacute;n.</h2>
+		{% endif %}
 	</div>
 </section>
 <section id="section-two">
 	<div class="inner-container">
 		<header><i class="icon-picture"></i> <h1>{% trans 'dictionary_result_metonymy' %}</h1></header>
-		<div class="contents-200 image-content">
-			<img src="{{ word.metonymy.url }}" alt="metonimia" />
-		</div>
+		{% if metonymy|length > 0 %}
+		<ul class="list-group">
+			{% for item in metonymy  %}
+			<li class="list-group-item">{{ item.name|escape }}</li>
+			{% endfor %}
+		</ul>
+		{% else %}
+		<h2>No hay resultados a&uacute;n.</h2>
+		{% endif %}
 	</div>
 </section>
 <section id="draw">
 	<div class="inner-container">
 		<header><i class="icon-picture"></i> <h1>{% trans 'dictionary_result_semantic_field' %}</h1></header>
-		<div class="contents image-content">
-			<img src="{{ word.semantic_field.url }}" alt="campo semántico" />
-		</div>
+		{% if semantic_field|length > 0 %}
+		<ul class="list-group">
+			{% for item in semantic_field  %}
+			<li class="list-group-item">{{ item.name|escape }}</li>
+			{% endfor %}
+		</ul>
+		{% else %}
+		<h2>No hay resultados a&uacute;n.</h2>
+		{% endif %}
 	</div>
 </section>
 {% else %}

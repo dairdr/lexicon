@@ -1,0 +1,16 @@
+INSERT INTO `lexicon`.`dictionary_word_has_skill` (`id`, `word`, `skill`, `value`) VALUES ('1', '1', '29', '+');
+INSERT INTO `lexicon`.`dictionary_word_has_skill` (`id`, `word`, `skill`, `value`) VALUES ('2', '1', '7', '+');
+INSERT INTO `lexicon`.`dictionary_word_has_skill` (`id`, `word`, `skill`, `value`) VALUES ('4', '1', '49', '+');
+INSERT INTO `lexicon`.`dictionary_word_has_skill` (`id`, `word`, `skill`, `value`) VALUES ('5', '1', '26', '+');
+INSERT INTO `lexicon`.`dictionary_word_has_skill` (`id`, `word`, `skill`, `value`) VALUES ('6', '1', '26', '+');
+INSERT INTO `lexicon`.`dictionary_word_has_skill` (`id`, `word`, `skill`, `value`) VALUES ('7', '1', '7', '+');
+INSERT INTO `lexicon`.`dictionary_word_has_skill` (`id`, `word`, `skill`, `value`) VALUES ('8', '1', '8', '-');
+INSERT INTO `lexicon`.`dictionary_word_has_skill` (`id`, `word`, `skill`, `value`) VALUES ('9', '1', '12', '+');
+INSERT INTO `lexicon`.`dictionary_word_has_skill` (`id`, `word`, `skill`, `value`) VALUES ('10', '1', '21', '+');
+INSERT INTO `lexicon`.`dictionary_word_has_skill` (`id`, `word`, `skill`, `value`) VALUES ('11', '1', '29', '+');
+INSERT INTO `lexicon`.`dictionary_word_has_skill` (`id`, `word`, `skill`, `value`) VALUES ('12', '1', '41', 'cardumen');
+INSERT INTO `lexicon`.`dictionary_word_has_skill` (`id`, `word`, `skill`, `value`) VALUES ('13', '1', '1', 'aletas');
+INSERT INTO `lexicon`.`dictionary_word_has_skill` (`id`, `word`, `skill`, `value`) VALUES ('14', '1', '26', '+');
+INSERT INTO `lexicon`.`dictionary_word_has_skill` (`id`, `word`, `skill`, `value`) VALUES ('15', '2', '26', '+');
+INSERT INTO `lexicon`.`dictionary_word_has_skill` (`id`, `word`, `skill`, `value`) VALUES ('16', '2', '50', '+');
+INSERT INTO `lexicon`.`dictionary_word_has_skill` (`id`, `word`, `skill`, `value`) VALUES ('17', '1', '50', '+');
