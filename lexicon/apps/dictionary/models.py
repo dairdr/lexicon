@@ -14,7 +14,7 @@ class Skill(models.Model):
 		db_table = 'dictionary_skill'
 		ordering = ['id']
 
-	def __str__(self):
+	def __unicode__(self):
 		return '%s' % self.name
 
 class SLC(models.Model):
@@ -26,7 +26,7 @@ class SLC(models.Model):
 		db_table = 'dictionary_slc'
 		ordering = ['id']
 
-	def __str__(self):
+	def __unicode__(self):
 		return '%s' % self.name
 
 class SLCHasSkill(models.Model):
@@ -37,7 +37,7 @@ class SLCHasSkill(models.Model):
 	class Meta:
 		db_table = 'dictionary_slc_has_skill'
 
-	def __str__(self):
+	def __unicode__(self):
 		return 'relacion slc y skill (%s y %s)' % (self.slc.name, self.skill.name)
 
 class FLC(models.Model):
@@ -49,7 +49,7 @@ class FLC(models.Model):
 		db_table = 'dictionary_flc'
 		ordering = ['id']
 
-	def __str__(self):
+	def __unicode__(self):
 		return '%s' % self.name
 
 class FLCHasSLC(models.Model):
@@ -60,7 +60,7 @@ class FLCHasSLC(models.Model):
 	class Meta:
 		db_table = 'dictionary_flc_has_slc'
 
-	def __str__(self):
+	def __unicode__(self):
 		return 'relacion flc y slc (%s y %s)' % (self.flc.name, self.slc.name)
 
 class Category(models.Model):
@@ -72,7 +72,7 @@ class Category(models.Model):
 		db_table = 'dictionary_category'
 		ordering = ['id']
 
-	def __str__(self):
+	def __unicode__(self):
 		return '%s' % self.name
 
 class CategoryHasFLC(models.Model):
@@ -83,7 +83,7 @@ class CategoryHasFLC(models.Model):
 	class Meta:
 		db_table = 'dictionary_category_has_flc'
 
-	def __str__(self):
+	def __unicode__(self):
 		return 'relacion entre category y flc (%s y %s)' % (self.category.name, self.flc.name)
 
 class Word(models.Model):
@@ -116,7 +116,7 @@ class WordHasSkill(models.Model):
 	class Meta:
 		db_table = 'dictionary_word_has_skill'
 
-	def __str__(self):
+	def __unicode__(self):
 		return 'relacion word y flc (%s y %s)' % (self.word.name, self.skill.name)
 
 class Metaphor(models.Model):
@@ -127,7 +127,7 @@ class Metaphor(models.Model):
 		db_table = 'dictionary_metaphor'
 		ordering = ['name']
 
-	def __str__(self):
+	def __unicode__(self):
 		return self.name
 
 class Metonymy(models.Model):
@@ -138,7 +138,7 @@ class Metonymy(models.Model):
 		db_table = 'dictionary_metonymy'
 		ordering = ['name']
 
-	def __str__(self):
+	def __unicode__(self):
 		return self.name
 
 class SemanticField(models.Model):
@@ -149,5 +149,5 @@ class SemanticField(models.Model):
 		db_table = 'dictionary_semantic_field'
 		ordering = ['name']
 
-	def __str__(self):
+	def __unicode__(self):
 		return self.name
